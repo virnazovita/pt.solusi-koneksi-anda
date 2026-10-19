@@ -1,0 +1,35 @@
+/* Halaman admin Kelola Kontak (ukuran dari desain Figma, lebar desain 1440px).
+   "calc(var(--v) * 12)" = 12px di desain, ikut membesar/mengecil sesuai lebar layar. */
+.kt { --v: clamp(0.62px, calc(100vw / 1440), 1.5px); }
+
+/* Judul di bar atas (seperti di Figma) */
+.kt-top { position: fixed; top: 0; left: 240px; right: 0; height: 62px; display: flex; align-items: center; padding: 0 32px; z-index: 4; pointer-events: none; }
+.kt-top h1 { font-size: 20px; font-weight: 700; line-height: 1.2; color: #111827; }
+
+.kt-sub { font-size: max(11.5px, calc(var(--v) * 12)); color: #4b5563; }
+
+.kt .alert-sukses { width: calc(var(--v) * 1080); max-width: 100%; margin: 14px 0 0; }
+
+/* Kartu tabel */
+.kt-kartu { width: calc(var(--v) * 1080); max-width: 100%; margin-top: calc(var(--v) * 60); background: #fff; border: 1px solid #dfe3ec; border-radius: calc(var(--v) * 8); overflow: hidden; box-shadow: 0 1px 4px rgba(15, 31, 77, .05); }
+.kt-scroll { overflow-x: auto; }
+.kt-tabel { width: 100%; min-width: 760px; border-collapse: collapse; table-layout: fixed; }
+.kt-tabel th { height: calc(var(--v) * 44); padding: 0 12px; text-align: left; font-size: max(12px, calc(var(--v) * 12)); font-weight: 500; color: #111827; border-bottom: 1px solid #cfd3dc; }
+.kt-tabel td { padding: calc(var(--v) * 18) 12px; vertical-align: middle; font-size: max(12px, calc(var(--v) * 12)); color: #111827; border-top: 1px solid #cfd3dc; }
+.kt-tabel tbody tr:first-child td { border-top: 0; }
+.kt-tabel .k-nama { padding-left: calc(var(--v) * 60); }
+
+.kt-nama { font-weight: 700; }
+.kt-email { word-break: break-word; }
+.kt-pesan { color: #6b7280; font-size: max(11.5px, calc(var(--v) * 11.5)); line-height: 1.5; }
+.kt-tgl { font-weight: 700; }
+
+.kt-kosong { text-align: center; color: #9ca3af; padding: calc(var(--v) * 60) 0 !important; }
+.kt-kaki { min-height: calc(var(--v) * 44); border-top: 1px solid #cfd3dc; display: flex; align-items: center; justify-content: center; padding: 6px 16px; }
+
+@media (max-width: 900px) {
+  .kt-kartu, .kt .alert-sukses { width: 100%; }
+}
+@media (max-width: 760px) {
+  .kt-top { left: 0; padding: 0 16px; }
+}

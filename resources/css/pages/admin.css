@@ -1,0 +1,38 @@
+/* Gaya dasar halaman admin: sidebar, bar atas, area isi, nomor halaman */
+* { box-sizing: border-box; }
+body { margin: 0; font-family: "Segoe UI", system-ui, sans-serif; background: #fff; color: #111827; }
+
+/* ===== Sidebar ===== */
+.sidebar { position: fixed; inset: 0 auto 0 0; width: 240px; background: #284686; color: #fff; display: flex; flex-direction: column; padding: 22px 14px; z-index: 5; }
+.sb-merek { display: flex; align-items: center; gap: 10px; padding: 0 8px 20px; border-bottom: 1px solid rgba(255,255,255,.18); margin-bottom: 18px; }
+.sb-merek img { width: 36px; height: 36px; border-radius: 8px; object-fit: contain; background: #fff; padding: 3px; flex: none; }
+.sb-merek b { display: block; font-size: 14px; letter-spacing: .01em; }
+.sb-merek small { font-size: 9px; letter-spacing: .1em; opacity: .7; }
+.sb-menu a { display: flex; align-items: center; gap: 10px; color: #fff; text-decoration: none; font-size: 13px; padding: 10px 12px; border-radius: 8px; margin-bottom: 4px; opacity: .88; }
+.sb-menu a:hover { background: rgba(255,255,255,.1); }
+.sb-menu a.aktif { background: rgba(255,255,255,.16); font-weight: 600; opacity: 1; }
+.sidebar svg { width: 16px; height: 16px; flex: none; }
+.sb-keluar { margin: auto 0 0; border-top: 1px solid rgba(255,255,255,.18); padding-top: 14px; }
+.sb-keluar button { display: flex; align-items: center; gap: 10px; width: 100%; background: none; border: 0; color: #fff; font-size: 13px; font-family: inherit; padding: 10px 12px; cursor: pointer; opacity: .88; }
+.sb-keluar button:hover { opacity: 1; }
+
+/* ===== Area utama ===== */
+.main { margin-left: 240px; min-height: 100vh; }
+.topbar { height: 62px; background: #fafafa; border-bottom: 1px solid #eee; display: flex; align-items: center; padding: 0 32px; font-size: 14px; }
+.content { padding: 28px 32px 48px; }
+
+/* ===== Pesan sukses ===== */
+.alert-sukses { background: #e8f7ee; color: #166534; border-radius: 8px; padding: 10px 14px; font-size: 13px; margin: 0 0 16px; }
+
+/* ===== Nomor halaman ===== */
+.pagination { display: flex; align-items: center; gap: 6px; }
+.pagination .hal { min-width: 28px; height: 28px; padding: 0 8px; display: inline-flex; align-items: center; justify-content: center; border: 1px solid #d9dee9; border-radius: 6px; background: #fff; color: #374151; font-size: 12px; text-decoration: none; }
+.pagination .hal:hover { background: #eef3ff; }
+.pagination .hal.aktif { background: #284686; border-color: #284686; color: #fff; font-weight: 600; }
+.pagination .titik { color: #9ca3af; }
+
+@media (max-width: 760px) {
+  .sidebar { position: static; width: auto; }
+  .main { margin-left: 0; }
+  .topbar, .content { padding-left: 16px; padding-right: 16px; }
+}

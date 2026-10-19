@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+@import 'tailwindcss';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+
+@theme {
+    --font-sans: 'Poppins', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+        'Segoe UI Symbol', 'Noto Color Emoji';
+}
+
+/* ====================== GLOBAL (dipakai di semua halaman) ====================== */
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+.navy {
+    background-color: #0b3d78;
+}
+.navy-text {
+    color: #0b3d78;
+}
+.navy-grad {
+    background: linear-gradient(180deg, rgba(11, 61, 120, 0.15) 0%, rgba(11, 61, 120, 0.85) 100%);
+}
+.navbar-dark {
+    background-color: #0a1f4d;
+}
+
+/* ---- Navbar (dipakai di semua halaman) ---- */
+.nav-link {
+    color: #cbd5e1;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+.nav-link:hover {
+    color: #ffffff;
+}
+.nav-link.active {
+    color: #ffffff;
+    font-weight: 600;
+    position: relative;
+}
+.nav-link.active::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -6px;
+    height: 2px;
+    background: #ffffff;
+    border-radius: 2px;
+}
+
+.login-btn {
+    background-color: #33488f;
+    color: #ffffff;
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 0.45rem 1.1rem;
+    border-radius: 0.5rem;
+}
+.login-btn:hover {
+    background-color: #3f5aad;
+}

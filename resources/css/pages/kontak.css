@@ -1,0 +1,337 @@
+/* ====================== HALAMAN KONTAK ====================== */
+
+/* ---- Navbar (sama seperti halaman lain) ---- */
+.navbar {
+    background-color: #0a1f4d;
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
+}
+.navbar-inner {
+    max-width: 72rem;
+    margin: 0 auto;
+    padding: 0.75rem 1.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+.logo-icon {
+    width: 2.25rem;
+    height: 2.25rem;
+    object-fit: contain;
+}
+.logo-text {
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 0.95rem;
+    letter-spacing: 0.03em;
+}
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+.nav-menu a {
+    color: #cbd5e1;
+    font-size: 0.85rem;
+    font-weight: 500;
+    text-decoration: none;
+    position: relative;
+}
+.nav-menu a:hover {
+    color: #ffffff;
+}
+.nav-menu a.active {
+    color: #ffffff;
+    font-weight: 600;
+}
+.nav-menu a.active::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -6px;
+    height: 2px;
+    background: #ffffff;
+    border-radius: 2px;
+}
+.btn-login {
+    background-color: #33488f;
+    color: #ffffff;
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 0.5rem 1.1rem;
+    border-radius: 0.5rem;
+    text-decoration: none;
+}
+.btn-login:hover {
+    background-color: #3f5aad;
+}
+
+/* ---- Foto sekolah (hero) ---- */
+.kontak-hero {
+    height: 220px;
+    background-size: cover;
+    background-position: center;
+    background-color: #0b3d78;
+    position: relative;
+}
+.kontak-hero::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(10, 20, 45, 0.35);
+}
+
+/* ---- Teks error validasi form ---- */
+.error-teks {
+    display: block;
+    color: #dc2626;
+    font-size: 0.75rem;
+    margin-top: 0.25rem;
+}
+
+/* ---- Popup sukses (modal) ---- */
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    background: rgba(10, 15, 30, 0.55);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+}
+.modal-box {
+    background: #ffffff;
+    border-radius: 1rem;
+    padding: 2rem 1.75rem;
+    max-width: 22rem;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+}
+.modal-icon {
+    width: 3.25rem;
+    height: 3.25rem;
+    margin: 0 auto 1rem;
+    border-radius: 9999px;
+    background: #22c55e;
+    color: #ffffff;
+    font-size: 1.6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.modal-box h3 {
+    color: #0b3d78;
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 0.4rem;
+}
+.modal-box p {
+    color: #64748b;
+    font-size: 0.85rem;
+    margin-bottom: 1.4rem;
+}
+.modal-btn {
+    background-color: #0b3d78;
+    color: #ffffff;
+    border: none;
+    padding: 0.6rem 1.75rem;
+    border-radius: 0.5rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+.modal-btn:hover {
+    background-color: #124a94;
+}
+
+/* ---- Kartu info (menumpuk di atas foto) ---- */
+.info-cards {
+    max-width: 60rem;
+    margin: -2.75rem auto 0;
+    position: relative;
+    z-index: 5;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 0 1.25rem;
+}
+@media (min-width: 640px) {
+    .info-cards {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+.info-card {
+    background: #ffffff;
+    border-radius: 0.9rem;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+    padding: 1.25rem 1rem;
+    text-align: center;
+}
+.info-icon {
+    font-size: 1.5rem;
+    margin-bottom: 0.4rem;
+}
+.info-card h4 {
+    color: #0b3d78;
+    font-size: 0.9rem;
+    font-weight: 700;
+    margin-bottom: 0.35rem;
+}
+.info-card p {
+    color: #64748b;
+    font-size: 0.8rem;
+    line-height: 1.5;
+}
+
+/* ---- Form + Hubungi Kami ---- */
+.kontak-utama {
+    max-width: 60rem;
+    margin: 3rem auto;
+    padding: 0 1.25rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+@media (min-width: 768px) {
+    .kontak-utama {
+        grid-template-columns: 1.4fr 1fr;
+    }
+}
+
+.form-box h3,
+.hubungi-box h3 {
+    color: #0b3d78;
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 0.4rem;
+}
+.form-box .subteks {
+    color: #64748b;
+    font-size: 0.85rem;
+    margin-bottom: 1.25rem;
+}
+.form-box label {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #334155;
+    margin: 0.9rem 0 0.3rem;
+}
+.form-box input,
+.form-box textarea {
+    width: 100%;
+    border: 1px solid #e2e8f0;
+    border-radius: 0.5rem;
+    padding: 0.6rem 0.8rem;
+    font-size: 0.85rem;
+    font-family: inherit;
+}
+.form-box input:focus,
+.form-box textarea:focus {
+    outline: none;
+    border-color: #3f7ce0;
+}
+.btn-kirim {
+    margin-top: 1.25rem;
+    background-color: #0b3d78;
+    color: #ffffff;
+    border: none;
+    padding: 0.7rem 1.5rem;
+    border-radius: 0.5rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+.btn-kirim:hover {
+    background-color: #124a94;
+}
+
+.hubungi-box {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 0.9rem;
+    padding: 1.5rem;
+}
+.hubungi-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.8rem;
+    margin-top: 1.1rem;
+}
+.hubungi-item:first-of-type {
+    margin-top: 0.9rem;
+}
+.hubungi-icon {
+    font-size: 1.1rem;
+}
+.hubungi-item strong {
+    display: block;
+    color: #0b3d78;
+    font-size: 0.85rem;
+    margin-bottom: 0.15rem;
+}
+.hubungi-item p {
+    color: #64748b;
+    font-size: 0.8rem;
+    line-height: 1.5;
+}
+
+/* ---- Peta ---- */
+.peta-wrapper {
+    max-width: 60rem;
+    margin: 0 auto 3rem;
+    padding: 0 1.25rem;
+}
+.peta-wrapper iframe {
+    width: 100%;
+    border-radius: 0.9rem;
+}
+
+/* ---- Mari Berkolaborasi ---- */
+.kolaborasi {
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.kolaborasi-overlay {
+    position: relative;
+    z-index: 2;
+    background: rgba(11, 61, 120, 0.55);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.kolaborasi-overlay h3 {
+    color: #ffffff;
+    font-size: 1.4rem;
+    font-weight: 800;
+    letter-spacing: 0.03em;
+}
+
+/* ---- Footer ---- */
+.footer {
+    background-color: #0b3d78;
+    text-align: center;
+    padding: 0.9rem 1.25rem;
+}
+.footer p {
+    color: #cbd5e1;
+    font-size: 0.7rem;
+    letter-spacing: 0.03em;
+}

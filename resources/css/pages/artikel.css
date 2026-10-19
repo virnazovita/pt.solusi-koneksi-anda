@@ -1,0 +1,65 @@
+/* Ukuran diukur dari desain Figma (lebar desain 1440px).
+   "calc(var(--v) * 29)" = 29px di desain, ikut membesar/mengecil sesuai lebar layar.
+   Mau semuanya lebih kecil/besar? Ubah angka 1440 pada --v (lebih besar = lebih kecil). */
+.art { --v: clamp(0.62px, calc(100vw / 1440), 1.5px); }
+
+/* ===== Judul + tombol Tambah Artikel ===== */
+.art-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; width: calc(var(--v) * 936); max-width: 100%; }
+.art-judul { font-size: calc(var(--v) * 29); font-weight: 700; line-height: 1.15; margin: 0; color: #111827; }
+.art-crumb { margin: calc(var(--v) * 14) 0 calc(var(--v) * 60) calc(var(--v) * 15); font-size: max(11px, calc(var(--v) * 12)); color: #b4bac6; }
+.art-crumb a { color: #b4bac6; text-decoration: none; }
+.art-crumb b { color: #1d4ed8; font-weight: 700; }
+
+.art-tombol { display: inline-flex; align-items: center; gap: calc(var(--v) * 8); min-height: 36px; margin-top: calc(var(--v) * 4); padding: calc(var(--v) * 10) calc(var(--v) * 20); border-radius: calc(var(--v) * 8); background: #284686; color: #fff; font-size: max(12px, calc(var(--v) * 10)); font-weight: 600; text-decoration: none; white-space: nowrap; transition: background .15s; }
+.art-tombol:hover { background: #1f3a73; }
+.art-tombol svg { width: 14px; height: 14px; fill: none; stroke: currentColor; stroke-width: 2.4; stroke-linecap: round; }
+
+.art .alert-sukses { width: calc(var(--v) * 921); max-width: 100%; margin-left: calc(var(--v) * 15); }
+
+/* ===== Kartu tabel: lebar & tinggi sesuai desain (915 x 671) ===== */
+.art-kartu { width: calc(var(--v) * 921); max-width: 100%; min-height: calc(var(--v) * 678); margin-left: calc(var(--v) * 15);
+             background: #f7f8fc; border: 1px solid #e1e5f0; border-radius: calc(var(--v) * 8); overflow: hidden; display: flex; flex-direction: column; }
+.art-tabel { width: 100%; border-collapse: collapse; table-layout: fixed; }
+.art-tabel th { height: calc(var(--v) * 40); background: #eff2f9; text-align: left; font-size: max(9.5px, calc(var(--v) * 8)); letter-spacing: .07em; text-transform: uppercase; color: #5b6475; font-weight: 600; padding: 0; }
+.art-tabel td { padding: calc(var(--v) * 6.5) 0; border-top: 1px solid #e3e7f1; vertical-align: middle; font-size: max(11px, calc(var(--v) * 9.4)); color: #111827; }
+.art-tabel .k-foto { padding-left: calc(var(--v) * 65); }
+.art-tabel td.t-judul { font-weight: 500; padding-right: calc(var(--v) * 20); }
+.art-tabel td.t-tanggal { color: #4b5563; }
+
+.art-foto { width: calc(var(--v) * 49); height: calc(var(--v) * 49); min-width: 36px; min-height: 36px; border-radius: calc(var(--v) * 8); background: #dfe5f3 center / cover no-repeat; }
+.art-badge { display: inline-block; background: #dbe5fb; color: #2b5bd7; font-size: max(10px, calc(var(--v) * 8.5)); font-weight: 500; padding: calc(var(--v) * 3) calc(var(--v) * 12); border-radius: 999px; }
+
+.art-aksi { display: flex; gap: calc(var(--v) * 8); }
+.art-aksi form { margin: 0; }
+.art-ikon { width: calc(var(--v) * 28); height: calc(var(--v) * 28); min-width: 26px; min-height: 26px; display: inline-flex; align-items: center; justify-content: center; border-radius: calc(var(--v) * 7); padding: 0; cursor: pointer; font: inherit; }
+.art-ikon svg { width: 52%; height: 52%; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.art-edit { background: #eef3ff; border: 1px solid #c9dafc; color: #2b5bd7; }
+.art-hapus { background: #fff0f0; border: 1px solid #f4c3c3; color: #dc2626; }
+
+.art-kosong { text-align: center; color: #9ca3af; padding: calc(var(--v) * 60) 0 !important; }
+.art-kaki { margin-top: auto; min-height: calc(var(--v) * 52); border-top: 1px solid #e3e7f1; display: flex; align-items: center; justify-content: center; gap: 12px; padding: 6px calc(var(--v) * 24); }
+
+/* ===== Form tambah / edit ===== */
+.art-form { width: calc(var(--v) * 921); max-width: 100%; margin-left: calc(var(--v) * 15); padding: calc(var(--v) * 32); background: #f7f8fc; border: 1px solid #e1e5f0; border-radius: calc(var(--v) * 8); }
+.art-form label { display: block; margin: 18px 0 6px; font-size: max(12px, calc(var(--v) * 10)); font-weight: 600; color: #374151; }
+.art-form label:first-of-type { margin-top: 0; }
+.art-form input[type=text],
+.art-form input[type=date],
+.art-form input[type=file],
+.art-form textarea { width: 100%; padding: 11px 14px; border: 1px solid #d9dee9; border-radius: 8px; background: #fff; font: inherit; font-size: max(13px, calc(var(--v) * 10.5)); color: #111827; outline: none; }
+.art-form textarea { min-height: 180px; resize: vertical; line-height: 1.6; }
+.art-form input:focus,
+.art-form textarea:focus { border-color: #284686; box-shadow: 0 0 0 3px rgba(40, 70, 134, .15); }
+.art-err { margin-top: 5px; color: #dc2626; font-size: 12.5px; }
+.art-preview { display: block; margin-top: 10px; width: 140px; height: 100px; object-fit: cover; border-radius: 8px; border: 1px solid #e1e5f0; }
+.art-form-aksi { display: flex; gap: 10px; margin-top: 26px; }
+.art-form-aksi button { border: 0; font: inherit; cursor: pointer; }
+.art-btn-batal { display: inline-flex; align-items: center; min-height: 36px; padding: 0 20px; border-radius: 8px; background: #e3e7f1; color: #374151; font-size: max(12px, calc(var(--v) * 10)); font-weight: 600; text-decoration: none; }
+.art-btn-batal:hover { background: #d6dbe9; }
+.art-form-aksi .art-tombol { margin-top: 0; }
+
+@media (max-width: 900px) {
+  .art-kartu, .art-form, .art .alert-sukses { width: 100%; margin-left: 0; }
+  .art-crumb { margin-left: 0; }
+  .art-tabel .k-foto { padding-left: 16px; }
+}
